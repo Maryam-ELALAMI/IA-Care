@@ -1,0 +1,21 @@
+{
+  "name": "ia-care",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CareAI - a React front-end prototype for multi-disease detection dashboards (skin cancer, brain cancer, Alzheimer's, Parkinson's) and a healthcare chatbot placeholder.",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.13.0",
+    "@eslint/js": "^9.13.0",
+    "eslint-plugin-react": "^7.37.1",
+    "globals": "^15.11.0"
+  }
+}
