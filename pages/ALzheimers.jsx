@@ -90,7 +90,7 @@ const Alzheimers = () => {
     ) : (
       result && (
         <>
-          <h3>Alzheimer's Prediction:</h3>
+          <h3>Alzheimer&apos;s Prediction:</h3>
           <p>{result}</p>
         </>
       )
