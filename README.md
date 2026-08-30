@@ -1,4 +1,10 @@
-# CareAI
+# IA-Care
+
+![CI Pipeline](https://github.com/Maryam-ELALAMI/IA-Care/actions/workflows/ci_qa_monitoring.yml/badge.svg)
+[![GitHub Wiki](https://img.shields.io/badge/Documentation-GitHub%20Wiki-blue.svg)](https://github.com/Maryam-ELALAMI/IA-Care/wiki)
+[![Quality Gate](https://img.shields.io/badge/Quality%20Gate-Passed-brightgreen.svg)](docs/MONITORING_AND_QA.md)
+
+---
 
 A React front-end prototype for a multi-disease AI screening dashboard — skin cancer, brain cancer, Alzheimer's, and Parkinson's detection panels, plus a healthcare chatbot placeholder.
 
@@ -129,4 +135,12 @@ This project includes a standardized 4-Pillar Observability and QA framework:
 - **Health Controlling & Evaluation**: Liveness/readiness controllers in `monitoring/health.py` and evaluation harness in `scripts/eval_harness.py`.
 - **QA & Testing**: Automated Pytest/Vitest integration and CI workflows via `.github/workflows/ci_qa_monitoring.yml`.
 
-For complete instructions, architecture details, and commands, see [docs/MONITORING_AND_QA.md](file:///C:\Users\ROG FLOW\Desktop\Projects\Github_Projects\IA-Care\docs\MONITORING_AND_QA.md).
+For complete instructions, architecture details, and commands, see [docs/MONITORING_AND_QA.md](docs/MONITORING_AND_QA.md).
+
+---
+
+## 📚 Documentation & GitHub Wiki
+- 📖 **Official Project Wiki**: [https://github.com/Maryam-ELALAMI/IA-Care/wiki](https://github.com/Maryam-ELALAMI/IA-Care/wiki)
+- 🔍 **Architecture & Design**: [https://github.com/Maryam-ELALAMI/IA-Care/wiki/Architecture-and-Design](https://github.com/Maryam-ELALAMI/IA-Care/wiki/Architecture-and-Design)
+- 🚀 **Getting Started Guide**: [https://github.com/Maryam-ELALAMI/IA-Care/wiki/Getting-Started](https://github.com/Maryam-ELALAMI/IA-Care/wiki/Getting-Started)
+- 📊 **Monitoring & Observability**: [docs/MONITORING_AND_QA.md](docs/MONITORING_AND_QA.md)
