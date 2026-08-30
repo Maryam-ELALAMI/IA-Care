@@ -1,7 +1,7 @@
 /**
  * Health check controller for IA-Care
  */
-function getHealthStatus() {
+export function getHealthStatus() {
   return {
     service: 'IA-Care',
     status: 'UP',
@@ -10,4 +10,10 @@ function getHealthStatus() {
   };
 }
 
-module.exports = { getHealthStatus };
+export function checkLiveness() {
+  return true;
+}
+
+export function checkReadiness() {
+  return true;
+}
