@@ -6,6 +6,9 @@
 ![CI Pipeline](https://github.com/Maryam-ELALAMI/IA-Care/actions/workflows/ci_qa_monitoring.yml/badge.svg)
 [![GitHub Wiki](https://img.shields.io/badge/Documentation-GitHub%20Wiki-blue.svg)](https://github.com/Maryam-ELALAMI/IA-Care/wiki)
 [![Quality Gate](https://img.shields.io/badge/Quality%20Gate-Passed-brightgreen.svg)](docs/MONITORING_AND_QA.md)
+[![Sponsor Bosaj](https://img.shields.io/badge/Sponsor-Bosaj-ea4aaa?style=flat-square&logo=github-sponsors)](https://github.com/sponsors/Bosaj)
+[![Support Maryam-ELALAMI](https://img.shields.io/badge/Support-Maryam--ELALAMI-ea4aaa?style=flat-square&logo=github)](https://github.com/Maryam-ELALAMI)
+[![Support ghaffariOualid](https://img.shields.io/badge/Support-ghaffariOualid-ea4aaa?style=flat-square&logo=github)](https://github.com/ghaffariOualid)
 
 ---
 
@@ -124,9 +127,9 @@ Distributed under the [MIT License](LICENSE).
 
 ## Contributors / Authors
 
-- [**Maryam-ELALAMI**](https://github.com/Maryam-ELALAMI) — repository owner/maintainer.
-- [**ghaffariOualid**](https://github.com/ghaffariOualid) — original application code (per commit history).
-- [**Bosaj**](https://github.com/Bosaj) — documentation, licensing, and CI setup (this PR).
+- [**Maryam-ELALAMI**](https://github.com/Maryam-ELALAMI) [![Support](https://img.shields.io/badge/Support-Maryam--ELALAMI-ea4aaa?style=flat-square&logo=github)](https://github.com/Maryam-ELALAMI) — repository owner/maintainer.
+- [**ghaffariOualid**](https://github.com/ghaffariOualid) [![Support](https://img.shields.io/badge/Support-ghaffariOualid-ea4aaa?style=flat-square&logo=github)](https://github.com/ghaffariOualid) — original application code (per commit history).
+- [**Bosaj**](https://github.com/Bosaj) [![Sponsor](https://img.shields.io/badge/Sponsor-Bosaj-ea4aaa?style=flat-square&logo=github-sponsors)](https://github.com/sponsors/Bosaj) — documentation, licensing, and CI setup.
 
 > This list reflects `git log` and the GitHub contributors API at the time of writing. If you contributed and are missing, please open a PR to add yourself.
 
