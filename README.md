@@ -14,7 +14,6 @@
 
 A React front-end prototype for a multi-disease AI screening dashboard — skin cancer, brain cancer, Alzheimer's, and Parkinson's detection panels, plus a healthcare chatbot placeholder.
 
-[![CI](https://github.com/Maryam-ELALAMI/IA-Care/actions/workflows/ci.yml/badge.svg)](https://github.com/Maryam-ELALAMI/IA-Care/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## Overview
@@ -71,7 +70,7 @@ To actually run the UI in a browser, wire these files into a bundler of your cho
 
 ## Testing / CI
 
-There is no automated test suite yet. The GitHub Actions workflow at [`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs on every push/PR to `main` and executes:
+There is no automated test suite yet. The GitHub Actions workflow at [`.github/workflows/ci_qa_monitoring.yml`](.github/workflows/ci_qa_monitoring.yml) runs on every push/PR to `main` and executes:
 
 1. `npm ci`
 2. `npm run lint` (ESLint over all `.js`/`.jsx` files)
@@ -96,7 +95,7 @@ IA-Care/
 ├── styles/                 # Global SCSS design tokens and layout
 ├── Images/                 # Sidebar icons and logos
 ├── docs/wiki-draft/        # Draft wiki pages (see below)
-├── .github/workflows/ci.yml
+├── .github/workflows/ci_qa_monitoring.yml
 ├── LICENSE
 └── CHANGELOG.md
 ```
