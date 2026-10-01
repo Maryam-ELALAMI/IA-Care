@@ -5,6 +5,9 @@
   "description": "CareAI - a React front-end prototype for multi-disease detection dashboards (skin cancer, brain cancer, Alzheimer's, Parkinson's) and a healthcare chatbot placeholder.",
   "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -13,9 +16,12 @@
     "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
-    "eslint": "^9.13.0",
     "@eslint/js": "^9.13.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "eslint": "^9.13.0",
     "eslint-plugin-react": "^7.37.1",
-    "globals": "^15.11.0"
+    "globals": "^15.11.0",
+    "sass": "^1.105.1",
+    "vite": "^8.3.2"
   }
 }

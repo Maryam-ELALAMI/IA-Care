@@ -1,4 +1,3 @@
-const fs = require('fs');
 
 function log(level, message, meta = {}) {
   const logObj = {

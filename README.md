@@ -57,16 +57,16 @@ Each route renders one self-contained panel component. Panels do not share state
 
 ## Getting Started
 
-This repo did not previously ship a `package.json` or bundler scaffold. This PR adds a minimal `package.json` covering the dependencies the code already imports (`react`, `react-dom`, `react-router-dom`) plus ESLint as a dev dependency, so the project can be installed and linted:
+Clone the repository and run the application with Vite:
 
 ```bash
 git clone https://github.com/Maryam-ELALAMI/IA-Care.git
 cd IA-Care
 npm install
-npm run lint
+npm run dev     # Start local Vite development server (http://localhost:3000)
+npm run build   # Production build output to dist/
+npm run lint    # Run ESLint quality checks
 ```
-
-To actually run the UI in a browser, wire these files into a bundler of your choice (e.g. Vite or Create React App) — a `public/index.html` entry point and bundler config are not yet part of this repository. See [`docs/wiki-draft/Getting-Started.md`](docs/wiki-draft/Getting-Started.md) for a suggested Vite setup.
 
 ## Testing / CI
 

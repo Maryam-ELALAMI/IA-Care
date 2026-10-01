@@ -9,7 +9,9 @@ function runEvaluation() {
   try {
     const health = getHealthStatus();
     isHealthy = health.status === "UP";
-  } catch (e) {}
+  } catch (e) {
+    console.warn("Health check exception:", e.message);
+  }
 
   const results = {
     project: "IA-Care",

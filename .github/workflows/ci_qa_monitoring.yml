@@ -39,10 +39,19 @@ jobs:
           python scripts/eval_harness.py
 
       - name: Set up Node.js
-        if: hashFiles('scripts/eval_harness.js') != ''
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install Node Dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run Production Build
+        run: npm run build
 
       - name: Run Node Evaluation
         if: hashFiles('scripts/eval_harness.js') != ''

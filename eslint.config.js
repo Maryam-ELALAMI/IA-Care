@@ -3,6 +3,9 @@ import react from "eslint-plugin-react";
 import globals from "globals";
 
 export default [
+  {
+    ignores: ["dist/**", "node_modules/**", "coverage/**", ".pytest_cache/**"],
+  },
   js.configs.recommended,
   {
     files: ["**/*.{js,jsx}"],
@@ -16,6 +19,13 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node,
+        ...globals.jest,
+        describe: "readonly",
+        test: "readonly",
+        expect: "readonly",
+        it: "readonly",
+        beforeEach: "readonly",
+        afterEach: "readonly",
       },
     },
     settings: {

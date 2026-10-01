@@ -1,4 +1,4 @@
-import "../src/styles/main.scss";
+import "./styles/main.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chatbot from "./pages/Chatbot";
 import BrainCancer from "./pages/BrainCancer";
