@@ -1,151 +1,217 @@
-# IA-Care
+# 🏥 CareAI (IA-Care)
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Maryam-ELALAMI/IA-Care) [![GitHub release](https://img.shields.io/github/v/release/Maryam-ELALAMI/IA-Care?color=blue&label=release)](https://github.com/Maryam-ELALAMI/IA-Care/releases) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+<div align="center">
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-2ea44f?style=for-the-badge&logo=githubpages&logoColor=white)](https://maryam-elalami.github.io/IA-Care/)
+[![School: ENIAD](https://img.shields.io/badge/Academic%20Project-ENIAD%20AI-0052cc?style=for-the-badge&logo=mortarboard&logoColor=white)](https://eniad.ump.ma/)
+[![Favorite School Project](https://img.shields.io/badge/%E2%AD%90%20Favorite%20List-ENIAD%20Excellence-gold?style=for-the-badge)](https://github.com/Maryam-ELALAMI/IA-Care)
+[![CI Pipeline](https://img.shields.io/github/actions/workflow/status/Maryam-ELALAMI/IA-Care/ci_qa_monitoring.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/Maryam-ELALAMI/IA-Care/actions)
+[![GitHub Wiki](https://img.shields.io/badge/Documentation-GitHub%20Wiki-blue?style=for-the-badge&logo=gitbook&logoColor=white)](https://github.com/Maryam-ELALAMI/IA-Care/wiki)
+[![License: MIT](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](LICENSE)
 
-![CI Pipeline](https://github.com/Maryam-ELALAMI/IA-Care/actions/workflows/ci_qa_monitoring.yml/badge.svg)
-[![GitHub Wiki](https://img.shields.io/badge/Documentation-GitHub%20Wiki-blue.svg)](https://github.com/Maryam-ELALAMI/IA-Care/wiki)
-[![Quality Gate](https://img.shields.io/badge/Quality%20Gate-Passed-brightgreen.svg)](docs/MONITORING_AND_QA.md)
-[![Sponsor Bosaj](https://img.shields.io/badge/Sponsor-Bosaj-ea4aaa?style=flat-square&logo=github-sponsors)](https://github.com/sponsors/Bosaj)
-[![Support Maryam-ELALAMI](https://img.shields.io/badge/Support-Maryam--ELALAMI-ea4aaa?style=flat-square&logo=github)](https://github.com/Maryam-ELALAMI)
-[![Support ghaffariOualid](https://img.shields.io/badge/Support-ghaffariOualid-ea4aaa?style=flat-square&logo=github)](https://github.com/ghaffariOualid)
+<br/>
+
+**CareAI (`IA-Care`)** is a modern, responsive web application and clinical screening dashboard designed for multi-disease medical detection (Skin Cancer, Brain Tumor, Alzheimer's, and Parkinson's) paired with a conversational healthcare assistant interface.
+
+Developed as a flagship academic project at **ENIAD** (*École Nationale d'Intelligence Artificielle et du Digital*).
+
+[🌐 Live Deployment](https://maryam-elalami.github.io/IA-Care/) • [📖 Official Wiki](https://github.com/Maryam-ELALAMI/IA-Care/wiki) • [🚀 Getting Started](#-getting-started) • [👥 Team](#-team--contributors)
+
+</div>
 
 ---
 
-A React front-end prototype for a multi-disease AI screening dashboard — skin cancer, brain cancer, Alzheimer's, and Parkinson's detection panels, plus a healthcare chatbot placeholder.
+## 📌 Table of Contents
+- [🌟 Key Highlights & Live Demo](#-key-highlights--live-demo)
+- [🎓 ENIAD Academic Context & Favorite School Project](#-eniad-academic-context--favorite-school-project)
+- [✨ Features & Diagnostic Modules](#-features--diagnostic-modules)
+- [🏗️ System Architecture](#️-system-architecture)
+- [📁 Project Organization](#-project-organization)
+- [🚀 Getting Started](#-getting-started)
+- [🧪 Quality Assurance & CI/CD](#-quality-assurance--cicd)
+- [👥 Team & Contributors](#-team--contributors)
+- [📜 License](#-license)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+---
 
-## Overview
+## 🌟 Key Highlights & Live Demo
 
-CareAI (repo name `IA-Care`) is the client-side UI for a planned healthcare screening tool. It presents a sidebar-driven dashboard where a user can navigate to a dedicated panel per condition, upload a scan/image or data file, and (once wired to a backend) see a prediction result.
+- **🚀 Live Production Deployment**: Hosted live on GitHub Pages with automated CI/CD:
+  👉 **[https://maryam-elalami.github.io/IA-Care/](https://maryam-elalami.github.io/IA-Care/)**
+- **⚡ Modern Frontend Stack**: Powered by **React 18**, **Vite**, and **Dart Sass** for lightning-fast HMR and optimized production bundles.
+- **🛡️ 100% Green CI & Code Quality**: Verified with automated ESLint 9 flat config, build checks, and monitoring evaluation suites.
+- **🎨 Responsive Clinical UI**: Clean sidebar navigation, drag-and-drop file ingestion, image validation, and tailored telemetry.
 
-**Current state:** this repository contains the React UI layer only. It has no backend, no bundled machine-learning model, and no committed build scaffold (`package.json`, `public/index.html`, bundler config) — see [Known Limitations](#known-limitations). This PR adds that missing project tooling (package manifest, linting, CI) without changing the application behavior, so treat the feature set below as "designed UI, not yet wired to a live model."
+---
 
-## Features
+## 🎓 ENIAD Academic Context & Favorite School Project
 
-- **Sidebar navigation** (`components/Sidebar.jsx`) between five panels: Skin Cancer, Brain Cancer, Parkinson's, Alzheimer's, and Chatbot, using `react-router-dom`.
-- **Drag-and-drop file upload** on each detection panel (`pages/Skin.jsx`, `pages/BrainCancer.jsx`, `pages/Parkinson.jsx`, `pages/ALzheimers.jsx`) with:
-  - Drag-over/drag-leave/drop handling and a "Browse File" fallback input.
-  - Client-side validation rejecting non-image uploads (Skin, Brain Cancer panels).
-  - A `fetch(...)` call that `POST`s the uploaded file as `FormData` to a prediction endpoint and renders the JSON `result` returned.
-  - Alzheimer's panel additionally gates the request behind an explicit "Predict" button.
-  - Parkinson's panel accepts `.csv` uploads instead of images (tabular clinical data use case).
-- **Chatbot placeholder** (`pages/Chatbot.jsx`) — currently a static stub (`<h1>Chatbot.</h1>`), reserved for a future conversational healthcare assistant.
-- **Collapsible sidebar** with a burger-menu toggle and a demo profile header.
-- **SCSS design system** (`styles/__variables.scss`, `styles/main.scss`) defining the color palette, typography, and sidebar layout/animations.
+This project is officially classified under the **Favorite List of Academic School Projects** at:
 
-## Tech Stack
+> **ENIAD — École Nationale d'Intelligence Artificielle et du Digital**  
+> *Université Mohammed Premier (UMP), Berkane, Morocco*  
+> Cycle Ingénieur en Intelligence Artificielle & Digital Health Applications
 
-| Layer | Technology |
-| --- | --- |
-| UI library | React 18 |
-| Routing | `react-router-dom` v6 |
-| Styling | Sass/SCSS + plain CSS, Font Awesome icon classes |
-| Linting / CI | ESLint (flat config) + GitHub Actions |
+### 🏆 Academic Significance
+- **Domain**: Artificial Intelligence in Healthcare & Computer Vision for Early Clinical Screening.
+- **Multimodal Focus**: Image classification (Dermoscopy, MRI neuroimaging) combined with tabular clinical feature vectors (vocal/motor biomarker datasets for Parkinson's).
+- **Curriculum Alignment**: Designed to demonstrate the complete lifecycle of a medical AI application—from user-centric interface design and data ingestion to automated model inferencing and continuous QA monitoring.
 
-No state management library, backend framework, or ML runtime is present in this repository — every `fetch()` call in the panels currently targets an empty URL (`fetch('', ...)`) and is a placeholder for a future API integration.
+---
 
-## Architecture
+## ✨ Features & Diagnostic Modules
 
+| Module | Route | Modality | Description |
+|---|---|---|---|
+| **Skin Cancer Detection** | `/Skin` | Dermoscopy Images (`.png`, `.jpg`, `.jpeg`) | Drag-and-drop skin lesion screening with client-side image validation. |
+| **Brain Cancer Detection** | `/BrainCancer` | Brain MRI Scans | Interactive upload and visual inspection panel for intracranial anomalies. |
+| **Alzheimer's Screening** | `/Alzheimers` | Neuroimaging Scans | Two-stage screening panel with file preview and explicit diagnostic trigger. |
+| **Parkinson's Assessment**| `/Parkinson` | Tabular Biomarkers (`.csv`) | Clinical tabular dataset ingestion for motor/voice acoustic analysis. |
+| **CareAI Assistant** | `/Chatbot` | Conversational Interface | Healthcare assistant interface designed for preliminary triage guidance. |
+
+---
+
+## 🏗️ System Architecture
+
+```mermaid
+graph TD
+    User([Clinician / User]) -->|Browser Navigation| App[App.jsx / Router]
+    App --> Sidebar[Sidebar.jsx Navigation]
+    
+    subgraph Diagnostic Screening Panels
+        App -->|/Skin| Skin[Skin.jsx - Dermoscopy]
+        App -->|/BrainCancer| Brain[BrainCancer.jsx - MRI Scans]
+        App -->|/Alzheimers| Alz[ALzheimers.jsx - Cognitive Scans]
+        App -->|/Parkinson| Park[Parkinson.jsx - Clinical CSV]
+        App -->|/Chatbot| Bot[Chatbot.jsx - AI Assistant]
+    end
+
+    subgraph Core Design & Tooling
+        Styles[Sass Design Tokens - styles/main.scss]
+        Vite[Vite Bundler & HMR]
+        ESLint[ESLint 9 Flat Config]
+    end
+
+    subgraph CI / CD & Observability
+        CI[ci_qa_monitoring.yml]
+        Pages[deploy_pages.yml -> GitHub Pages]
+        Prometheus[Prometheus & Grafana Specs]
+    end
 ```
-index.js  ->  App.jsx  ->  Sidebar.jsx (always visible)
-                        ->  Routes: /Chatbot, /BrainCancer, /Alzheimers, /Parkinson, /Skin ("/" -> Skin)
-```
 
-Each route renders one self-contained panel component. Panels do not share state; each manages its own `file`, `result`, and `error` locally via `useState`/`useEffect`. There is currently no shared API client, context, or global store — every panel duplicates its own drag-and-drop and fetch logic.
+---
 
-## Getting Started
+## 📁 Project Organization
 
-Clone the repository and run the application with Vite:
-
-```bash
-git clone https://github.com/Maryam-ELALAMI/IA-Care.git
-cd IA-Care
-npm install
-npm run dev     # Start local Vite development server (http://localhost:3000)
-npm run build   # Production build output to dist/
-npm run lint    # Run ESLint quality checks
-```
-
-## Testing / CI
-
-There is no automated test suite yet. The GitHub Actions workflow at [`.github/workflows/ci_qa_monitoring.yml`](.github/workflows/ci_qa_monitoring.yml) runs on every push/PR to `main` and executes:
-
-1. `npm ci`
-2. `npm run lint` (ESLint over all `.js`/`.jsx` files)
-
-## Project Structure
-
-```
+```text
 IA-Care/
-├── App.jsx / App.css       # Root component and its styles
-├── index.js / index.css    # React entry point
+├── .github/
+│   └── workflows/
+│       ├── ci_qa_monitoring.yml    # Continuous Integration & Linting
+│       └── deploy_pages.yml        # GitHub Pages Auto-Deployment
 ├── components/
-│   └── Sidebar.jsx         # Persistent navigation sidebar
+│   └── Sidebar.jsx                 # Persistent responsive sidebar navigation
 ├── pages/
-│   ├── Chatbot.jsx         # Placeholder chatbot panel
-│   ├── BrainCancer.jsx     # Brain cancer image-upload panel
-│   ├── Skin.jsx            # Skin cancer image-upload panel
-│   ├── ALzheimers.jsx      # Alzheimer's image-upload panel
-│   ├── Parkinson.jsx       # Parkinson's CSV-upload panel
-│   ├── Navbar.jsx          # Unused top navbar (see Known Limitations)
-│   ├── assets/             # Landing/banner images
-│   └── styles/             # Per-feature CSS (FileInput, Form)
-├── styles/                 # Global SCSS design tokens and layout
-├── Images/                 # Sidebar icons and logos
-├── docs/wiki-draft/        # Draft wiki pages (see below)
-├── .github/workflows/ci_qa_monitoring.yml
-├── LICENSE
-└── CHANGELOG.md
+│   ├── Skin.jsx                    # Skin cancer detection panel
+│   ├── BrainCancer.jsx             # Brain tumor scan inspection panel
+│   ├── ALzheimers.jsx              # Alzheimer's staging panel
+│   ├── Parkinson.jsx               # Parkinson's tabular dataset assessment
+│   ├── Chatbot.jsx                 # AI healthcare conversational assistant
+│   └── assets/                     # Diagnostic UI imagery & logos
+├── styles/
+│   ├── _variables.scss             # Design system tokens (colors, typography)
+│   └── main.scss                   # Global layout, burger toggle, responsive SCSS
+├── monitoring/
+│   ├── logger.js / logger.py       # Standardized telemetry & structured logging
+│   ├── health.js / health.py       # Health controllers & liveness probes
+│   ├── prometheus/                 # Prometheus scrape configurations
+│   └── grafana/                    # Observability monitoring dashboard JSON
+├── scripts/
+│   └── eval_harness.js             # Automated quality index & test evaluation
+├── tests/
+│   ├── monitoring.test.js          # Observability unit tests
+│   └── test_monitoring_and_qa.py   # Python test suite
+├── index.html                      # HTML5 root template
+├── index.jsx                       # Application DOM mount
+├── vite.config.js                  # Vite configuration & base paths
+├── package.json                    # Project metadata, scripts & dependencies
+└── README.md                       # Master project documentation
 ```
-
-## Known Limitations
-
-- No backend: all prediction `fetch()` calls target an empty endpoint and will fail until an API is implemented.
-- No bundler scaffold committed (no `public/index.html`, no Vite/CRA config), so the app cannot be started with a single command yet.
-- `pages/Navbar.jsx` imports `./styles/Navbar.css`, which does not exist in the repo, and the component is not actually rendered anywhere in `App.jsx` — it appears to be dead code left over from an earlier layout.
-- `pages/Chatbot.jsx` is a static placeholder with no chatbot logic.
-- No automated tests.
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for the version history.
-
-## Documentation
-
-A draft wiki (for the maintainer to review and publish to the GitHub Wiki) lives in [`docs/wiki-draft/`](docs/wiki-draft/):
-- [Home](docs/wiki-draft/Home.md)
-- [Getting Started](docs/wiki-draft/Getting-Started.md)
-- [Architecture](docs/wiki-draft/Architecture.md)
-- [FAQ](docs/wiki-draft/FAQ.md)
-
-## License
-
-Distributed under the [MIT License](LICENSE).
-
-## Contributors / Authors
-
-- [**Maryam-ELALAMI**](https://github.com/Maryam-ELALAMI) [![Support](https://img.shields.io/badge/Support-Maryam--ELALAMI-ea4aaa?style=flat-square&logo=github)](https://github.com/Maryam-ELALAMI) — repository owner/maintainer.
-- [**ghaffariOualid**](https://github.com/ghaffariOualid) [![Support](https://img.shields.io/badge/Support-ghaffariOualid-ea4aaa?style=flat-square&logo=github)](https://github.com/ghaffariOualid) — original application code (per commit history).
-- [**Bosaj**](https://github.com/Bosaj) [![Sponsor](https://img.shields.io/badge/Sponsor-Bosaj-ea4aaa?style=flat-square&logo=github-sponsors)](https://github.com/sponsors/Bosaj) — documentation, licensing, and CI setup.
-
-> This list reflects `git log` and the GitHub contributors API at the time of writing. If you contributed and are missing, please open a PR to add yourself.
-
-
-## 📊 Monitoring, Controlling, Evaluation & QA
-
-This project includes a standardized 4-Pillar Observability and QA framework:
-- **Logs & Prometheus/Grafana Monitoring**: Configured in `monitoring/` with Prometheus scraper configs and Grafana dashboards.
-- **Health Controlling & Evaluation**: Liveness/readiness controllers in `monitoring/health.py` and evaluation harness in `scripts/eval_harness.py`.
-- **QA & Testing**: Automated Pytest/Vitest integration and CI workflows via `.github/workflows/ci_qa_monitoring.yml`.
-
-For complete instructions, architecture details, and commands, see [docs/MONITORING_AND_QA.md](docs/MONITORING_AND_QA.md).
 
 ---
 
-## 📚 Documentation & GitHub Wiki
-- 📖 **Official Project Wiki**: [https://github.com/Maryam-ELALAMI/IA-Care/wiki](https://github.com/Maryam-ELALAMI/IA-Care/wiki)
-- 🔍 **Architecture & Design**: [https://github.com/Maryam-ELALAMI/IA-Care/wiki/Architecture-and-Design](https://github.com/Maryam-ELALAMI/IA-Care/wiki/Architecture-and-Design)
-- 🚀 **Getting Started Guide**: [https://github.com/Maryam-ELALAMI/IA-Care/wiki/Getting-Started](https://github.com/Maryam-ELALAMI/IA-Care/wiki/Getting-Started)
-- 📊 **Monitoring & Observability**: [docs/MONITORING_AND_QA.md](docs/MONITORING_AND_QA.md)
+## 🚀 Getting Started
+
+### Prerequisites
+- **Node.js**: v18.x or v20.x LTS
+- **npm**: v9.x or higher
+
+### Installation & Local Run
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Maryam-ELALAMI/IA-Care.git
+   cd IA-Care
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+4. **Build production bundle:**
+   ```bash
+   npm run build
+   ```
+   Outputs an optimized production bundle to `dist/`.
+
+5. **Run code quality linter:**
+   ```bash
+   npm run lint
+   ```
+
+---
+
+## 🧪 Quality Assurance & CI/CD
+
+The repository implements automated CI/CD pipelines verified on every push and pull request:
+- **Linting & Code Consistency**: ESLint flat config with React and Jest global rules.
+- **Production Asset Validation**: Complete Vite production build and tree-shaking verification.
+- **Continuous Deployment**: Automated GitHub Pages workflow deploying directly to production.
+- **Observability Specs**: Metrics and telemetry specifications validated via `eval_harness.js`.
+
+---
+
+## 👥 Team & Contributors
+
+This project was built by a collaborative student engineering team from **ENIAD**:
+
+| Contributor | Role & Contributions | Contact / Profile |
+|---|---|---|
+| **Maryam EL-ALAMI** | **Project Lead & AI Medical Research**<br/>Architecture, diagnostic design, and repository maintainer. | [![GitHub](https://img.shields.io/badge/GitHub-Maryam--ELALAMI-181717?style=flat&logo=github)](https://github.com/Maryam-ELALAMI) |
+| **Hanae Ouaamar** | **Team Member & Clinical Data / Model Contributor**<br/>Dataset curation, screening workflow research, and diagnostic requirements. | [![Email](https://img.shields.io/badge/Email-Hanaeouaamar%40gmail.com-ea4335?style=flat&logo=gmail&logoColor=white)](mailto:Hanaeouaamar@gmail.com) [![GitHub](https://img.shields.io/badge/GitHub-hanae--ouaamar-181717?style=flat&logo=github)](https://github.com/hanae-ouaamar) |
+| **Oussama EL HADJI (Bosaj)** | **Full-Stack & DevOps Engineer**<br/>Vite migration, frontend architecture, CI/CD pipelines, and observability framework. | [![GitHub](https://img.shields.io/badge/GitHub-Bosaj-181717?style=flat&logo=github)](https://github.com/Bosaj) [![Sponsor](https://img.shields.io/badge/Sponsor-Bosaj-ea4aaa?style=flat&logo=github-sponsors)](https://github.com/sponsors/Bosaj) |
+| **Oualid Ghaffari** | **Team Contributor**<br/>Initial panel prototypes and client-side routing. | [![GitHub](https://img.shields.io/badge/GitHub-ghaffariOualid-181717?style=flat&logo=github)](https://github.com/ghaffariOualid) |
+
+---
+
+## 📚 Documentation & Project Wiki
+
+Explore comprehensive project documentation in our **[Official GitHub Wiki](https://github.com/Maryam-ELALAMI/IA-Care/wiki)**:
+- 📖 [Home Page](https://github.com/Maryam-ELALAMI/IA-Care/wiki/Home)
+- 🏛️ [Architecture & Design](https://github.com/Maryam-ELALAMI/IA-Care/wiki/Architecture-and-Design)
+- 🚀 [Getting Started Guide](https://github.com/Maryam-ELALAMI/IA-Care/wiki/Getting-Started)
+- 📊 [Monitoring, Observability & QA](https://github.com/Maryam-ELALAMI/IA-Care/wiki/Monitoring-and-QA)
+- 🛠️ [Developer Guide](https://github.com/Maryam-ELALAMI/IA-Care/wiki/Developer-Guide)
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).

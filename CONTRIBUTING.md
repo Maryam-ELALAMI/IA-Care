@@ -11,7 +11,7 @@ By participating in this project, you agree to abide by the terms of our [Code o
 1. **Fork the Repository** on GitHub.
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/Bosaj/<repo-name>.git
+   git clone https://github.com/Maryam-ELALAMI/IA-Care.git
    ```
 3. **Create a Feature Branch**:
    ```bash
