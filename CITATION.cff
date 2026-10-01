@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this software in your research or academic projects, please cite it as below."
+authors:
+  - family-names: "EL-ALAMI"
+    given-names: "Maryam"
+    affiliation: "National School of Artificial Intelligence and Digital (ENIAD - UMP)"
+  - family-names: "Ouaamar"
+    given-names: "Hanae"
+    affiliation: "National School of Artificial Intelligence and Digital (ENIAD - UMP)"
+  - family-names: "EL HADJI"
+    given-names: "Oussama"
+    affiliation: "National School of Artificial Intelligence and Digital (ENIAD - UMP)"
+    orcid: "https://orcid.org/0009-0000-0000-0000"
+  - family-names: "Ghaffari"
+    given-names: "Oualid"
+    affiliation: "National School of Artificial Intelligence and Digital (ENIAD - UMP)"
+title: "CareAI (IA-Care): Multi-Disease AI Medical Diagnostic & Screening Platform"
+version: 1.1.0
+date-released: 2026-10-01
+url: "https://github.com/Maryam-ELALAMI/IA-Care"
+institution:
+  name: "École Nationale d'Intelligence Artificielle et du Digital (ENIAD)"
+  address: "Berkane, Morocco"
+keywords:
+  - "healthcare ai"
+  - "medical imaging"
+  - "computer vision"
+  - "skin cancer"
+  - "brain tumor"
+  - "alzheimer's"
+  - "parkinson's"
+  - "react"
+  - "vite"
+  - "eniad"
