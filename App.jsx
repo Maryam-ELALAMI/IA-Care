@@ -1,5 +1,5 @@
 import "./styles/main.scss";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Chatbot from "./pages/Chatbot";
 import BrainCancer from "./pages/BrainCancer";
 import Skin from "./pages/Skin";

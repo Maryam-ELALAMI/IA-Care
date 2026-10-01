@@ -7,7 +7,7 @@ import BrainCancer from "../Images/brain.svg";
 import Alzheimers from "../Images/alzheimers.svg";
 import Parkinson from "../Images/parkinson.svg";
 import Chatbot from "../Images/chatbot.svg";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
     const location = useLocation();
@@ -68,13 +68,13 @@ const Sidebar = () => {
                 <ul>
                     <li
                         className={
-                            location.pathname === "/HeartDisease"
+                            location.pathname === "/Skin" || location.pathname === "/"
                                 ? "active"
                                 : ""
                         }
                     >
                         <img src={Skin} alt="Skin Cancer" />
-                        <a href="/skin">Skin Cancer</a>
+                        <Link to="/Skin">Skin Cancer</Link>
                     </li>
                     <li
                         className={
@@ -82,34 +82,34 @@ const Sidebar = () => {
                         }
                     >
                         <img src={BrainCancer} alt="Brain Cancer" />
-                        <a href="/BrainCancer">Brain Cancer</a>
+                        <Link to="/BrainCancer">Brain Cancer</Link>
                     </li>
                     
                     <li
                         className={
-                            location.pathname === "/settings" ? "active" : ""
+                            location.pathname === "/Parkinson" ? "active" : ""
                         }
                     >
                         <img src={Parkinson} alt="Parkinson" />
-                        <a href="/Parkinson">Parkinson</a>
+                        <Link to="/Parkinson">Parkinson</Link>
                     </li>
 
                     <li
                         className={
-                            location.pathname === "/news" ? "active" : ""
+                            location.pathname === "/Alzheimers" ? "active" : ""
                         }
                     >
                         <img src={Alzheimers} alt="Alzheimer’s" />
-                        <a href="/Alzheimers">Alzheimer’s </a>
+                        <Link to="/Alzheimers">Alzheimer’s </Link>
                     </li>
                     
                     <li
                         className={
-                            location.pathname === "/support" ? "active" : ""
+                            location.pathname === "/Chatbot" ? "active" : ""
                         }
                     >
                         <img src={Chatbot} alt="Healthcare Chatbot" />
-                        <a href="/Chatbot">Chatbot</a>
+                        <Link to="/Chatbot">Chatbot</Link>
                     </li>
                 </ul>
             </div>
