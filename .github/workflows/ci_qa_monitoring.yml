@@ -12,6 +12,10 @@ env:
 jobs:
   qa_testing_monitoring:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -52,6 +56,11 @@ jobs:
 
       - name: Run Production Build
         run: npm run build
+
+      - name: Generate Artifact Attestation
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: 'dist'
 
       - name: Run Node Evaluation
         if: hashFiles('scripts/eval_harness.js') != ''
